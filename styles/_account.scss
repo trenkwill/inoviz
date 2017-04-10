@@ -1,0 +1,64 @@
+.account {
+	&__col {
+		background: $grey-light;
+		&__title {
+			padding: 15px;
+			background: $grey;
+			text-align: center;
+		}
+	}
+	&__radio {
+		background: $white;
+		border: solid 3px $grey;
+		margin-top: 3px;
+		width: 26px;
+		height: 26px;
+		label {
+			width: 20px;
+			height: 20px;
+			background: $grey;
+			&:after {
+				display: none;
+			}
+		}
+	}
+	&__price-label {
+		float: left;
+		text-align: left;
+		margin-left: 10px;
+	}
+	&__tabs {
+		margin-bottom: 0;
+		// bootstrap overides
+		a {
+			color: $bg-card;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			margin-right: 40px  !important;
+			&:hover {
+				background: none !important;
+				border: none !important;
+			}
+		}
+		.active a{
+			background: none !important;
+			border: none !important;
+			color: $bg !important;
+			border-bottom: solid 6px $bg !important;
+		}
+	}
+	&__toggle {
+		label {
+			border: 2px solid $orange !important;
+		}
+		input[type="checkbox"]:active + .toggle label,
+		input[type="checkbox"]:checked + .toggle label{
+			border: 16px solid $orange !important;
+		}
+
+		input[type="checkbox"]:checked:active + .toggle label{
+			border: 16px solid $orange !important;
+		}
+	}
+
+}

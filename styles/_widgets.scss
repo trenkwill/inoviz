@@ -1,0 +1,76 @@
+.widgets{
+	padding: 30px;
+	background: #414A5B;
+	color: $bg-card;
+	&__header {
+		@media screen and (max-width: $screen-sm-min) {
+			overflow-x: scroll;
+			&__in {
+				width: 730px;
+			}
+		}
+	}
+	&__title {
+		font-size: 15px;
+		float: left;
+		color: $white;
+		background: url("../images/line.png") no-repeat right center;
+		padding: 10px 40px 10px 0;
+		@media screen and (max-width: $screen-sm-min) {
+			padding-right: 20px;
+		}
+	}
+	&__tabs {
+		float: left;
+		width: 50%;
+		margin-bottom: 20px;
+		border-bottom: solid 1px $bg-card;
+		// bootstrap overides
+		a {
+			color: $bg-card;
+			&:hover {
+				background: none !important;
+				border: none !important;
+			}
+		}
+		.active a{
+			background: none !important;
+			border: none !important;
+			color: $white !important;
+			border-bottom: solid 3px $white !important;
+		}
+	}
+	&__card {
+		background: $bg-card;
+		border: solid 4px $bg-card;
+		width: 100px;
+		display: block;
+		margin: 0 auto 15px;
+		height: 100px;
+		padding-top: 15px;
+		position: relative;
+
+		&--selected {
+			border: solid 4px $white;
+			.check {
+				display: block !important;
+			}
+		}
+		.check {
+			display: none;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: $white;
+			position: absolute;
+			right: -10px;
+			top: -10px;
+		}
+	}
+	// bootstrap overides
+	.nav {
+		margin-bottom: 20px;
+	}
+	.nav-link {color: $white;}
+}
+

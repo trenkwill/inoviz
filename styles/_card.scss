@@ -1,0 +1,136 @@
+// card stretch with flexbox (enables cards to be the same 
+// height than the highest)
+
+@media screen and (min-width: $screen-sm-min) {
+	.card-stretch-wrap {
+		display: flex;
+		flex-direction:column;
+		.card {
+			height: 100%;
+			flex:1;
+			align-items: center;
+			min-height: 240px;
+		}
+	}
+
+	.card-stretch {
+		display: flex;
+		flex-wrap: wrap;
+		flex: 1 0 auto;
+		align-content: stretch;
+		.card {
+			height: 100%;
+			flex:1;
+			align-items: center;
+			min-height: 240px;
+		}
+	}
+}
+
+.card {
+	background: $bg-card;
+	position: relative;
+	border-bottom: solid 2px $grey;
+	&--grey {
+		background: $grey;
+		min-height: 100px;
+
+	}
+	&__center {
+		text-align: center;
+		padding-top: 20px;
+		@media screen and (min-width: $screen-sm-min) {
+			display: flex;
+			align-items:center;
+			flex-direction:column;
+			justify-content: center;
+			padding: 10px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		img {
+
+		}
+		span, a {
+			display: block;
+		}
+		&:hover {
+			color: #fff;
+		}
+		// min-height: 17em;
+	}
+	&__img {
+		width: 100%;
+	}
+	&__title {
+		background: $bg-title;	
+		padding: 10px;
+		h2 {margin-bottom: 0;}
+		&__checkbox {
+			float: left;
+			width: 20px;
+			height: 20px;
+			margin-right: 10px;
+		}
+	}
+	&__list{
+		list-style: none;
+		margin: 0;
+		padding: 20px;
+		img {margin-right: 5px;}
+		li {
+			color: $white;
+			margin-bottom: 10px;
+		}
+	}
+	&__list2{
+		list-style: none;
+		margin: 0;
+		padding:  0;
+		img {margin-right: 5px;}
+		li {
+			color: $white;
+			padding: 20px;
+			border-bottom: solid 1px $grey-light;
+		}
+	}
+
+	&__checkbox {
+		float: left;
+		&--top {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+	}
+
+	&__avatar {
+		display: block;
+		width: 60px;
+		height: 60px;
+		margin: 0 auto;
+	}
+	&__actions {
+		background: $grey;
+		padding: 7px;
+		color: $white;
+		font-size: 12px;
+		position: absolute;
+		bottom:0px;
+		width: 100%;
+		.comment-icon {
+			margin-right: 4px;
+		}
+		.share-icon {
+			float: right;
+			margin-top: 3px;
+		}
+	}
+	.h2 {
+		margin-top: 0;
+	}
+}

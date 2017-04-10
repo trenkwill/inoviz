@@ -1,0 +1,55 @@
+.btn {
+	white-space: initial;
+}
+
+.btn-round{
+	border-radius: 23px;
+}
+.btn-square {
+	border-radius: 0px;
+}
+.btn-dark{
+	background: $bg;
+	border-color: $bg;
+	color: $white;
+	&:hover, &:focus, &:active {
+		background: darken($bg, 10);
+		border-color: $bg;
+		color: $white;
+	}
+}
+
+.btn-blue {
+	background: $nav;
+	border-color: $nav;
+	color: $white;
+	&:hover, &:focus, &:active {
+		background: darken($nav, 10);
+		border-color: $nav;
+		color: $white;
+	}
+}
+.btn-white {
+	background: $white;
+	border-color: $white;
+	color: $nav;
+	&:hover, &:focus, &:active {
+		background: darken($white, 10);
+		border-color: $white;
+		color: $nav;
+	}
+}
+
+.btn-dark-line{
+	background: transparent;
+	border-width: 2px;
+	border-color: darken($bg-card, 20);
+	&:hover, &:focus, &:active {
+		background: transparent;
+		border-color: $white;
+	}
+	&.active {
+		border-color: $white;
+		color: $white;
+	}
+}

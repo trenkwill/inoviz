@@ -1,0 +1,118 @@
+.sidebar {
+	width: 225px;
+	float: left;
+	background: $nav;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 99999999;
+	@media (max-width: $screen-xs-min) { 
+		width: 100%;
+		height: 50px;
+	}
+	@media (min-width: $screen-xs-min) and (max-width: $screen-md-min) { 
+		width: 50px;
+	}
+	
+	&__mobile-header {
+		color: $white;
+		padding-top: 13px;
+		font-size: 18px;
+		@media (min-width: $screen-xs-min) { 
+			display: none;
+		}
+	}
+
+	&__logo {
+		display: block;
+		margin: 15px;
+		float: left;
+		@media (max-width: $screen-md-min) { 
+			margin: 0px 10px 7px;
+			// move the VIZ from INOVIZ to the bottom to make it a square logo
+			svg {
+				width: 50px;
+				height: 40px;
+				path {
+					transition: all .2s;
+				}
+				path#VIZ {
+				    transform: translate(-45px, 20px);
+				}
+			}
+		}
+		@media (max-width: $screen-xs-min) { 
+			display: none;
+		}
+	}
+	
+	&__hamburger {
+		display: block;
+		margin: 15px;
+		float: left;
+		@media (min-width: $screen-xs-min) { 
+			display: none;
+		}
+	}
+	&__search-mobile {
+		display: block;
+		margin: 15px 15px 10px 15px;
+		float: right;
+		@media (min-width: $screen-xs-min) { 
+			display: none;
+		}
+	}
+
+	&__menu {
+		width: 100%;
+		float: left;
+		list-style: none;
+		margin: 0px;
+		padding: 0;
+		@media (max-width: $screen-xs-min) { 
+			transition: all .2s;
+			background: $nav;
+			width: inherit;
+			&--mobile-hidden {
+				transform: translateY(-110%);
+			}
+		}
+		li {
+			a{
+				color: $white;
+				display: block;
+				padding: 15px 10px;
+				text-decoration: none;
+				transition: all 0.2s;
+				span {
+					@media (min-width: $screen-xs-min) and (max-width: $screen-md-min) { 
+						display: none;
+					}
+					@media (min-width: $screen-md-min) { 
+						display: inline;
+					}
+					@media (max-width: $screen-xs-min) { 
+						display: inline;
+					}
+				}
+			}
+			&:hover, &.active {
+				a {
+					background: $nav-active;
+					border-left: solid 4px $white;
+				}
+			}
+		}
+	}
+	&__icon {
+		width: 20px;
+		display: inline-block;
+		margin-right: 15px;
+		&--account {
+			border-width:2px;
+			width: 25px;
+			margin-right: 7px;
+		}
+	}
+}

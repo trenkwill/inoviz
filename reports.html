@@ -1,0 +1,453 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inoviz</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round' rel='stylesheet' type='text/css'>
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/jquery-jvectormap-2.0.3.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/jquery.FloatLabel.css">
+    <link rel="stylesheet" href="styles/bootstrap-slider.min.css">
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <!-- <script src="/bower_components/modernizr/modernizr.js"></script> -->
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <div class="sidebar">
+  <a href="dashboard-initial.html" class="sidebar__logo">
+    <svg width="86px" height="30px" viewBox="0 0 86 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <rect id="marge" x="0" y="0" width="86" height="30"></rect>
+            <path d="M83.2780449,21.4572011 L73.8235577,21.4572011 L83.7845353,9.30706522 C84.0257212,9.0455163 84.1704327,8.66508152 84.1704327,8.35597826 C84.1704327,7.57133152 83.6157051,6.88179348 82.6991987,6.88179348 L72.2317308,6.88179348 C71.6528846,6.88179348 71.1946314,7.35733696 71.1946314,7.92798913 C71.1946314,8.4986413 71.6528846,8.95040761 72.2317308,8.95040761 L81.5173878,8.95040761 L71.4358173,21.2194293 C71.2428686,21.4572011 71.1463942,21.7663043 71.1463942,22.0991848 C71.1463942,22.8600543 71.7734776,23.4782609 72.5452724,23.4782609 L83.2780449,23.4782609 C83.856891,23.4782609 84.3151442,23.0502717 84.3151442,22.4796196 C84.3151442,21.9089674 83.856891,21.4572011 83.2780449,21.4572011 Z M66.5638622,6.76290761 C65.9608974,6.76290761 65.4785256,7.26222826 65.4785256,7.85665761 L65.4785256,22.5271739 C65.4785256,23.1216033 65.9608974,23.5971467 66.5638622,23.5971467 C67.1668269,23.5971467 67.6733173,23.1216033 67.6733173,22.5271739 L67.6733173,7.85665761 C67.6733173,7.26222826 67.1668269,6.76290761 66.5638622,6.76290761 Z M54.7698718,21.4334239 L49.1020032,7.5 C48.9090545,7.0482337 48.4990385,6.76290761 48.0649038,6.76290761 C47.3895833,6.76290761 46.9795673,7.21467391 46.9795673,7.85665761 C46.9795673,7.97554348 47.0036859,8.1419837 47.0519231,8.26086957 L53.0092147,22.5033967 C53.3227564,23.1929348 53.8292468,23.5971467 54.5045673,23.5971467 L55.0351763,23.5971467 C55.7104968,23.5971467 56.2169872,23.1929348 56.5305288,22.5033967 L62.4878205,8.26086957 C62.5360577,8.1419837 62.5601763,7.97554348 62.5601763,7.85665761 C62.5601763,7.21467391 62.1501603,6.76290761 61.4748397,6.76290761 C61.0407051,6.76290761 60.6306891,7.0482337 60.4377404,7.5 L54.7698718,21.4334239 Z" id="VIZ" stroke="#124876" stroke-width="0.660000041" fill="#124876"></path>
+            <path d="M4.02435897,6.76290761 C3.42139423,6.76290761 2.93902244,7.26222826 2.93902244,7.85665761 L2.93902244,22.5271739 C2.93902244,23.1216033 3.42139423,23.5971467 4.02435897,23.5971467 C4.62732372,23.5971467 5.1338141,23.1216033 5.1338141,22.5271739 L5.1338141,7.85665761 C5.1338141,7.26222826 4.62732372,6.76290761 4.02435897,6.76290761 L4.02435897,6.76290761 Z M23.3915865,6.76290761 C22.7886218,6.76290761 22.30625,7.26222826 22.30625,7.85665761 L22.30625,20.6963315 L13.0205929,7.47622283 C12.6829327,7.0482337 12.2246795,6.76290761 11.6940705,6.76290761 L11.3805288,6.76290761 C10.5122596,6.76290761 9.81282051,7.47622283 9.81282051,8.33220109 L9.81282051,22.5271739 C9.81282051,23.1216033 10.2951923,23.5971467 10.8981571,23.5971467 C11.5011218,23.5971467 12.0076122,23.1216033 12.0076122,22.5271739 L12.0076122,9.66372283 L21.3415064,22.955163 C21.6309295,23.3355978 22.0891827,23.5971467 22.6197917,23.5971467 L22.9092147,23.5971467 C23.777484,23.5971467 24.5010417,22.9076087 24.5010417,22.0516304 L24.5010417,7.85665761 C24.5010417,7.26222826 23.9945513,6.76290761 23.3915865,6.76290761 L23.3915865,6.76290761 Z M36.6326923,6.64402174 C31.4713141,6.64402174 28.2635417,10.2105978 28.1670673,15.1800272 C28.2635417,20.1494565 31.4713141,23.7160326 36.6326923,23.7160326 C41.7699519,23.7160326 45.0018429,20.1494565 45.0983173,15.1800272 C45.0018429,10.2105978 41.7699519,6.64402174 36.6326923,6.64402174 L36.6326923,6.64402174 Z M36.6326923,21.6949728 C32.6290064,21.6949728 30.361859,18.841712 30.361859,15.1800272 C30.361859,11.5183424 32.6290064,8.66508152 36.6326923,8.66508152 C40.6122596,8.66508152 42.9035256,11.5183424 42.9035256,15.1800272 C42.9035256,18.841712 40.6122596,21.6949728 36.6326923,21.6949728 L36.6326923,21.6949728 Z" id="INO" stroke="#FFFFFF" stroke-width="0.660000041" fill="#FFFFFF"></path>
+        </g>
+    </svg>
+ </a>
+ <a href="#" class="sidebar__hamburger js-show-menu">
+     <img src="images/hamburger-icon.png" alt="hamburger">
+ </a>
+
+ <a href="#" class="sidebar__search-mobile js-show-search">
+     <img src="images/search-icon-white.png" alt="search" width="25">
+ </a>
+
+<div class="sidebar__mobile-header">
+    Reports
+</div>
+
+  <ul class="sidebar__menu sidebar__menu--mobile-hidden">
+
+    <li class="active">
+    	<a href="dashboard-initial.html">
+    		<img src="images/dashboard_icon.png" alt="dashboard icon" class="sidebar__icon">
+            <span>Dashboard</span>
+        </a>
+    </li>
+
+    <li>
+    	<a href="search.html">
+            <img src="images/search_icon.png" alt="search icon" class="sidebar__icon">
+            <span>Search</span>
+        </a>
+    </li>
+    
+    <li>
+    	<a href="reports.html"><img src="images/reports.png" alt="reports icon" class="sidebar__icon">
+            <span>Reports</span>
+        </a>
+    </li>
+    <li>
+    	<a href="bookmarks.html"><img src="images/bookmarks_icon.png" alt="bookmarks icon" class="sidebar__icon">
+            <span>Bookmarks</span>
+        </a>
+    </li>
+    <li>
+    	<a href="following.html"><img src="images/following_icon.png" alt="following icon" class="sidebar__icon"><span>Following</span></a>
+    </li>
+    <li>
+    	<a href="data-settings.html"><img src="images/data-settings_icon.png" alt="data-settings icon" class="sidebar__icon"><span>Data settings</span></a>
+    </li>
+    <li class="mt+">
+    	<a href="account.html">
+        <img src="images/face.jpg" alt="avatar" class="avatar sidebar__icon sidebar__icon--account" width="25">
+        <span>Your account</span></a>
+    </li>
+    <li><a href="#">
+    	<img src="images/help_icon.png" alt="help icon" class="sidebar__icon"><span>Help center</span></a>
+    </li>
+  </ul>
+</div>
+
+    <div class="main">
+      
+      <div class="topbar">
+  <form action="" class="form topbar__search">
+    <div class="input-wrap js-float-label-wrapper">
+      <label for=""><span>Keywords, experts, organizations...</span></label>
+      <input type="text" name="first" id="first" class="form-control topbar__search__input">
+    </div>
+
+    <!-- <div class="input-wrap">
+
+    	<input type="search" name="main-search" id="inputMain-Search" class="form-control " value="" required="required" title="Main Search">
+    	<label for="">
+    		<span></span>
+    	</label>
+    </div> -->
+    	<img src="images/search_icon_blue.png" alt="search" width="20" class="topbar__search__icon">
+    <input type="submit" value="Search" class="btn topbar__search__btn">
+  	<a href="search-advanced.html" class="btn btn-default topbar__btn-advanced hidden-xs">Advanced</a>
+  </form>
+</div>
+		
+			
+		<div class="container-fluid pt+ mt+">
+		  
+		    <h1 class="h1 white mb">You have <span class="green">8</span> reports</h1>
+			
+
+				<div class="filter-bar">
+					
+			        <ul class="nav nav-tabs filter-bar__nav df jc-sa pb-">
+
+						<div class="df jc-sb at-c f-1-0-auto">
+							
+							<li class="nav-item dropdown df">
+								<a class="nav-link dropdown-toggle filter-bar__btn" href="#" role="button" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									
+									<li class="dropdown-item mb0" href="#">
+										Delete
+									</li>
+									
+									<li class="dropdown-item mb0" href="#">
+										Save
+									</li>
+
+									<li class="dropdown-item mb0" href="#">
+										Move
+									</li>
+									
+									
+								</ul>
+							</li>
+							
+						</div>
+						
+						<div class="df jc-sb at-c f-0-1-auto">
+								<li class="nav-item dropdown mr hidden-xs">
+									<a class="nav-link dropdown-toggle filter-bar__btn" href="#" role="drop-button" aria-haspopup="true" aria-expanded="false">Filter </a>
+									<ul class="dropdown-menu">
+										
+										<li class="dropdown-item mb0" href="#">
+											<div class="checkbox">
+							    				<input type="checkbox" id="inlineCheckbox" value="option1">
+							    				<label for="inlineCheckbox"></label>
+							    			</div>
+											Articles
+											<span class="badge">23</span>
+										</li>
+										<li class="dropdown-item mb0" href="#">
+											<div class="checkbox">
+							    				<input type="checkbox" id="inlineCheckbox2" value="option2">
+							    				<label for="inlineCheckbox2"></label>
+							    			</div>
+											Patents
+											<span class="badge">123</span>
+										</li>
+										<li class="dropdown-item mb0" href="#">
+											<div class="checkbox">
+							    				<input type="checkbox" id="inlineCheckbox3" value="option3">
+							    				<label for="inlineCheckbox3"></label>
+							    			</div>
+											Thesis
+											<span class="badge">144</span>
+										</li>
+										<li class="dropdown-item mb0" href="#">
+											<div class="checkbox">
+							    				<input type="checkbox" id="inlineCheckbox4" value="option4">
+							    				<label for="inlineCheckbox4"></label>
+							    			</div>
+											Web pages
+											<span class="badge">98</span>
+										</li>
+									</ul>
+								</li>
+								<li class="nav-item mr">
+									<input class="form-control filter-bar__search" type="text" placeholder="Quick search...">
+								</li>
+								
+
+							
+								<li class="nav-item dropdown hidden-xs">
+										<a class="nav-link dropdown-toggle filter-bar__btn" href="#" role="drop-button" aria-haspopup="true" aria-expanded="false">Sortby</a>
+										<ul class="dropdown-menu">
+											
+											<li class="dropdown-item mb0" href="#">
+												<div class="checkbox">
+								    				<input type="checkbox" id="inlineCheckbox" value="option1">
+								    				<label for="inlineCheckbox"></label>
+								    			</div>
+												Articles
+												<span class="badge">23</span>
+											</li>
+											<li class="dropdown-item mb0" href="#">
+												<div class="checkbox">
+								    				<input type="checkbox" id="inlineCheckbox2" value="option2">
+								    				<label for="inlineCheckbox2"></label>
+								    			</div>
+												Patents
+												<span class="badge">123</span>
+											</li>
+											<li class="dropdown-item mb0" href="#">
+												<div class="checkbox">
+								    				<input type="checkbox" id="inlineCheckbox3" value="option3">
+								    				<label for="inlineCheckbox3"></label>
+								    			</div>
+												Thesis
+												<span class="badge">144</span>
+											</li>
+											<li class="dropdown-item mb0" href="#">
+												<div class="checkbox">
+								    				<input type="checkbox" id="inlineCheckbox4" value="option4">
+								    				<label for="inlineCheckbox4"></label>
+								    			</div>
+												Web pages
+												<span class="badge">98</span>
+											</li>
+										</ul>
+									</li>
+						</div>
+					</ul>
+				</div>
+
+
+		    <div class="row mt">
+
+		      
+		          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 mb">
+		            <div class="card">
+		                  <div class="card__title">
+
+		                  	<div class="card__title__checkbox checkbox">
+	    						<input type="checkbox" id="inlineCheckbox-0" value="option1">
+	    						<label for="inlineCheckbox-0"></label>
+	    					</div>
+	    					
+		                    <h2 class="h2 white">Speed sensor</h2>
+		                  </div>
+		                  <ul class="card__list">
+		                  	<li><img src="images/doc_icon2.png" alt="doc icon" width="12"> 2456 <span class="green">+23</span>
+		                  	</li>
+		                  	<li><img src="images/factory_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	<li><img src="images/user_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	</li>
+		                  </ul>
+		            </div>
+		          </div>
+		          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 mb">
+		            <div class="card">
+		                  <div class="card__title">
+
+		                  	<div class="card__title__checkbox checkbox">
+	    						<input type="checkbox" id="inlineCheckbox-1" value="option1">
+	    						<label for="inlineCheckbox-1"></label>
+	    					</div>
+	    					
+		                    <h2 class="h2 white">Speed sensor</h2>
+		                  </div>
+		                  <ul class="card__list">
+		                  	<li><img src="images/doc_icon2.png" alt="doc icon" width="12"> 2456 <span class="green">+23</span>
+		                  	</li>
+		                  	<li><img src="images/factory_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	<li><img src="images/user_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	</li>
+		                  </ul>
+		            </div>
+		          </div>
+		          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 mb">
+		            <div class="card">
+		                  <div class="card__title">
+
+		                  	<div class="card__title__checkbox checkbox">
+	    						<input type="checkbox" id="inlineCheckbox-2" value="option1">
+	    						<label for="inlineCheckbox-2"></label>
+	    					</div>
+	    					
+		                    <h2 class="h2 white">Speed sensor</h2>
+		                  </div>
+		                  <ul class="card__list">
+		                  	<li><img src="images/doc_icon2.png" alt="doc icon" width="12"> 2456 <span class="green">+23</span>
+		                  	</li>
+		                  	<li><img src="images/factory_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	<li><img src="images/user_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	</li>
+		                  </ul>
+		            </div>
+		          </div>
+		          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 mb">
+		            <div class="card">
+		                  <div class="card__title">
+
+		                  	<div class="card__title__checkbox checkbox">
+	    						<input type="checkbox" id="inlineCheckbox-3" value="option1">
+	    						<label for="inlineCheckbox-3"></label>
+	    					</div>
+	    					
+		                    <h2 class="h2 white">Speed sensor</h2>
+		                  </div>
+		                  <ul class="card__list">
+		                  	<li><img src="images/doc_icon2.png" alt="doc icon" width="12"> 2456 <span class="green">+23</span>
+		                  	</li>
+		                  	<li><img src="images/factory_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	<li><img src="images/user_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	</li>
+		                  </ul>
+		            </div>
+		          </div>
+		          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 mb">
+		            <div class="card">
+		                  <div class="card__title">
+
+		                  	<div class="card__title__checkbox checkbox">
+	    						<input type="checkbox" id="inlineCheckbox-4" value="option1">
+	    						<label for="inlineCheckbox-4"></label>
+	    					</div>
+	    					
+		                    <h2 class="h2 white">Speed sensor</h2>
+		                  </div>
+		                  <ul class="card__list">
+		                  	<li><img src="images/doc_icon2.png" alt="doc icon" width="12"> 2456 <span class="green">+23</span>
+		                  	</li>
+		                  	<li><img src="images/factory_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	<li><img src="images/user_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	</li>
+		                  </ul>
+		            </div>
+		          </div>
+		          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 mb">
+		            <div class="card">
+		                  <div class="card__title">
+
+		                  	<div class="card__title__checkbox checkbox">
+	    						<input type="checkbox" id="inlineCheckbox-5" value="option1">
+	    						<label for="inlineCheckbox-5"></label>
+	    					</div>
+	    					
+		                    <h2 class="h2 white">Speed sensor</h2>
+		                  </div>
+		                  <ul class="card__list">
+		                  	<li><img src="images/doc_icon2.png" alt="doc icon" width="12"> 2456 <span class="green">+23</span>
+		                  	</li>
+		                  	<li><img src="images/factory_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	<li><img src="images/user_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	</li>
+		                  </ul>
+		            </div>
+		          </div>
+		          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 mb">
+		            <div class="card">
+		                  <div class="card__title">
+
+		                  	<div class="card__title__checkbox checkbox">
+	    						<input type="checkbox" id="inlineCheckbox-6" value="option1">
+	    						<label for="inlineCheckbox-6"></label>
+	    					</div>
+	    					
+		                    <h2 class="h2 white">Speed sensor</h2>
+		                  </div>
+		                  <ul class="card__list">
+		                  	<li><img src="images/doc_icon2.png" alt="doc icon" width="12"> 2456 <span class="green">+23</span>
+		                  	</li>
+		                  	<li><img src="images/factory_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	<li><img src="images/user_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	</li>
+		                  </ul>
+		            </div>
+		          </div>
+		          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 mb">
+		            <div class="card">
+		                  <div class="card__title">
+
+		                  	<div class="card__title__checkbox checkbox">
+	    						<input type="checkbox" id="inlineCheckbox-7" value="option1">
+	    						<label for="inlineCheckbox-7"></label>
+	    					</div>
+	    					
+		                    <h2 class="h2 white">Speed sensor</h2>
+		                  </div>
+		                  <ul class="card__list">
+		                  	<li><img src="images/doc_icon2.png" alt="doc icon" width="12"> 2456 <span class="green">+23</span>
+		                  	</li>
+		                  	<li><img src="images/factory_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	<li><img src="images/user_icon.png" alt="doc icon" width="12"> 417 <span class="green">+23</span>
+		                  	</li>
+		                  </ul>
+		            </div>
+		          </div>
+
+		    </div><!-- .row-->
+
+
+		
+		</div>
+
+      </div>
+
+<!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/plugins.js -->
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+    <!-- endbuild -->
+
+
+     <script src="scripts/highcharts.js"></script>
+     <script src="scripts/jquery.highchartTable-min.js"></script>
+     <script src="scripts/jquery-jvectormap-2.0.3.min.js"></script>
+     <script src="scripts/jquery-jvectormap-world-mill.js"></script>
+     <script src="scripts/gdp-data.js"></script>
+     <script src="scripts/jquery.FloatLabel.js"></script>
+     <script src="scripts/bootstrap-slider.min.js"></script>
+     <script src="scripts/main.js"></script>
+     
+     <script>
+
+      
+     </script>
+  </body>
+</html>
+    

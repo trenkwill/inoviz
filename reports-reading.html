@@ -1,0 +1,675 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inoviz</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round' rel='stylesheet' type='text/css'>
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/jquery-jvectormap-2.0.3.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/jquery.FloatLabel.css">
+    <link rel="stylesheet" href="styles/bootstrap-slider.min.css">
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <!-- <script src="/bower_components/modernizr/modernizr.js"></script> -->
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <div class="sidebar">
+  <a href="dashboard-initial.html" class="sidebar__logo">
+    <svg width="86px" height="30px" viewBox="0 0 86 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <rect id="marge" x="0" y="0" width="86" height="30"></rect>
+            <path d="M83.2780449,21.4572011 L73.8235577,21.4572011 L83.7845353,9.30706522 C84.0257212,9.0455163 84.1704327,8.66508152 84.1704327,8.35597826 C84.1704327,7.57133152 83.6157051,6.88179348 82.6991987,6.88179348 L72.2317308,6.88179348 C71.6528846,6.88179348 71.1946314,7.35733696 71.1946314,7.92798913 C71.1946314,8.4986413 71.6528846,8.95040761 72.2317308,8.95040761 L81.5173878,8.95040761 L71.4358173,21.2194293 C71.2428686,21.4572011 71.1463942,21.7663043 71.1463942,22.0991848 C71.1463942,22.8600543 71.7734776,23.4782609 72.5452724,23.4782609 L83.2780449,23.4782609 C83.856891,23.4782609 84.3151442,23.0502717 84.3151442,22.4796196 C84.3151442,21.9089674 83.856891,21.4572011 83.2780449,21.4572011 Z M66.5638622,6.76290761 C65.9608974,6.76290761 65.4785256,7.26222826 65.4785256,7.85665761 L65.4785256,22.5271739 C65.4785256,23.1216033 65.9608974,23.5971467 66.5638622,23.5971467 C67.1668269,23.5971467 67.6733173,23.1216033 67.6733173,22.5271739 L67.6733173,7.85665761 C67.6733173,7.26222826 67.1668269,6.76290761 66.5638622,6.76290761 Z M54.7698718,21.4334239 L49.1020032,7.5 C48.9090545,7.0482337 48.4990385,6.76290761 48.0649038,6.76290761 C47.3895833,6.76290761 46.9795673,7.21467391 46.9795673,7.85665761 C46.9795673,7.97554348 47.0036859,8.1419837 47.0519231,8.26086957 L53.0092147,22.5033967 C53.3227564,23.1929348 53.8292468,23.5971467 54.5045673,23.5971467 L55.0351763,23.5971467 C55.7104968,23.5971467 56.2169872,23.1929348 56.5305288,22.5033967 L62.4878205,8.26086957 C62.5360577,8.1419837 62.5601763,7.97554348 62.5601763,7.85665761 C62.5601763,7.21467391 62.1501603,6.76290761 61.4748397,6.76290761 C61.0407051,6.76290761 60.6306891,7.0482337 60.4377404,7.5 L54.7698718,21.4334239 Z" id="VIZ" stroke="#124876" stroke-width="0.660000041" fill="#124876"></path>
+            <path d="M4.02435897,6.76290761 C3.42139423,6.76290761 2.93902244,7.26222826 2.93902244,7.85665761 L2.93902244,22.5271739 C2.93902244,23.1216033 3.42139423,23.5971467 4.02435897,23.5971467 C4.62732372,23.5971467 5.1338141,23.1216033 5.1338141,22.5271739 L5.1338141,7.85665761 C5.1338141,7.26222826 4.62732372,6.76290761 4.02435897,6.76290761 L4.02435897,6.76290761 Z M23.3915865,6.76290761 C22.7886218,6.76290761 22.30625,7.26222826 22.30625,7.85665761 L22.30625,20.6963315 L13.0205929,7.47622283 C12.6829327,7.0482337 12.2246795,6.76290761 11.6940705,6.76290761 L11.3805288,6.76290761 C10.5122596,6.76290761 9.81282051,7.47622283 9.81282051,8.33220109 L9.81282051,22.5271739 C9.81282051,23.1216033 10.2951923,23.5971467 10.8981571,23.5971467 C11.5011218,23.5971467 12.0076122,23.1216033 12.0076122,22.5271739 L12.0076122,9.66372283 L21.3415064,22.955163 C21.6309295,23.3355978 22.0891827,23.5971467 22.6197917,23.5971467 L22.9092147,23.5971467 C23.777484,23.5971467 24.5010417,22.9076087 24.5010417,22.0516304 L24.5010417,7.85665761 C24.5010417,7.26222826 23.9945513,6.76290761 23.3915865,6.76290761 L23.3915865,6.76290761 Z M36.6326923,6.64402174 C31.4713141,6.64402174 28.2635417,10.2105978 28.1670673,15.1800272 C28.2635417,20.1494565 31.4713141,23.7160326 36.6326923,23.7160326 C41.7699519,23.7160326 45.0018429,20.1494565 45.0983173,15.1800272 C45.0018429,10.2105978 41.7699519,6.64402174 36.6326923,6.64402174 L36.6326923,6.64402174 Z M36.6326923,21.6949728 C32.6290064,21.6949728 30.361859,18.841712 30.361859,15.1800272 C30.361859,11.5183424 32.6290064,8.66508152 36.6326923,8.66508152 C40.6122596,8.66508152 42.9035256,11.5183424 42.9035256,15.1800272 C42.9035256,18.841712 40.6122596,21.6949728 36.6326923,21.6949728 L36.6326923,21.6949728 Z" id="INO" stroke="#FFFFFF" stroke-width="0.660000041" fill="#FFFFFF"></path>
+        </g>
+    </svg>
+ </a>
+ <a href="#" class="sidebar__hamburger js-show-menu">
+     <img src="images/hamburger-icon.png" alt="hamburger">
+ </a>
+
+ <a href="#" class="sidebar__search-mobile js-show-search">
+     <img src="images/search-icon-white.png" alt="search" width="25">
+ </a>
+
+<div class="sidebar__mobile-header">
+    Reports
+</div>
+
+  <ul class="sidebar__menu sidebar__menu--mobile-hidden">
+
+    <li class="active">
+    	<a href="dashboard-initial.html">
+    		<img src="images/dashboard_icon.png" alt="dashboard icon" class="sidebar__icon">
+            <span>Dashboard</span>
+        </a>
+    </li>
+
+    <li>
+    	<a href="search.html">
+            <img src="images/search_icon.png" alt="search icon" class="sidebar__icon">
+            <span>Search</span>
+        </a>
+    </li>
+    
+    <li>
+    	<a href="reports.html"><img src="images/reports.png" alt="reports icon" class="sidebar__icon">
+            <span>Reports</span>
+        </a>
+    </li>
+    <li>
+    	<a href="bookmarks.html"><img src="images/bookmarks_icon.png" alt="bookmarks icon" class="sidebar__icon">
+            <span>Bookmarks</span>
+        </a>
+    </li>
+    <li>
+    	<a href="following.html"><img src="images/following_icon.png" alt="following icon" class="sidebar__icon"><span>Following</span></a>
+    </li>
+    <li>
+    	<a href="data-settings.html"><img src="images/data-settings_icon.png" alt="data-settings icon" class="sidebar__icon"><span>Data settings</span></a>
+    </li>
+    <li class="mt+">
+    	<a href="account.html">
+        <img src="images/face.jpg" alt="avatar" class="avatar sidebar__icon sidebar__icon--account" width="25">
+        <span>Your account</span></a>
+    </li>
+    <li><a href="#">
+    	<img src="images/help_icon.png" alt="help icon" class="sidebar__icon"><span>Help center</span></a>
+    </li>
+  </ul>
+</div>
+
+    <div class="main">
+      
+		<div class="topbar-back topbar-back--light clearfix">
+			<nav>
+				<div class="fl">
+					<p>
+					<img src="images/back-icon.png" alt="back" width="14">
+					All reports</p>
+				</div>
+				<ul class="fr fl-xs pl0">
+					<li class="mr"><a href="#graph"><img src="images/graph-icon.png">Graph builder</a></li>
+					<li class="mr"><a href="#export"><img src="images/share_icon2.png" alt="share" width="14">Export</a></li>
+					<li class="mr"><a href="#comment"><img src="images/comment_icon2.png" alt="comment" width="14">Comment <span class="blue em">15</span></a></li>
+					<li class="mr-">
+						<a href="#" class="btn btn-round btn-blue mr"><img src="images/pen-icon.png" alt="edit icon">Edit</a>
+						<a href="#" class="btn btn-round btn-dark"><img src="images/trash-icon.png" alt="trash-icon">Delete</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="data-blocks">
+			<div class="data-blocks__content pt">
+				<div class="clearfix mb-">
+					<h1 class="data-blocks__title fl mt-"><span class="blue">"Speed sensor"</span> + advanced criteria</h1>
+					<a href="#" class="btn btn-round btn-blue fr mt- mb- fl-xs">+ Save as report</a>
+				</div>
+
+					<div class="row">
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 pos-r hidden-xs" style="height:260px">
+									<h2 class="data-blocks__subtitle">Results location</h2>
+									<div class="data-blocks__legend">
+										<span class="legend-0"><span>0</span></span>
+										<span class="legend-1"><span>10</span></span>
+										<span class="legend-2"><span>20</span></span>
+										<span class="legend-3"><span>40</span></span>
+										<span class="legend-4"><span>100</span><span class="last">200</span></span>
+									</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="data-blocks__card mb">
+								<div class="data-blocks__card__plus">+</div>
+								<div class="p">
+								  <h2 class="h2 white">Recent keywords</h2>
+								  <table class="table table-condensed">
+								  	<tr>
+								  		<td>Ultrason</td>
+								  		<td>7896</td>
+								  	</tr>
+								  	<tr>
+								  		<td>Ultrason</td>
+								  		<td>7896</td>
+								  	</tr>
+								  	<tr>
+								  		<td>Ultrason</td>
+								  		<td>7896</td>
+								  	</tr>
+								  	<tr>
+								  		<td>Ultrason</td>
+								  		<td>7896</td>
+								  	</tr>
+								  	<tr>
+								  		<td>Ultrason</td>
+								  		<td>7896</td>
+								  	</tr>
+								  	<tr>
+								  		<td>Ultrason</td>
+								  		<td>7896</td>
+								  	</tr>
+								  </table>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="data-blocks__card mb">
+								<div class="data-blocks__card__plus">+</div>
+								<div class="p">
+								  <h2 class="h2 white">Top organisation <span class="bg fr em small-text">publication</span></h2>
+								  <table class="table table-condensed">
+								  	<tr>
+								  		<td>Ultrason</td>
+								  		<td>Chine</td>
+								  		<td>96</td>
+								  	</tr>
+								  	<tr>
+								  		<td>Ultrason</td>
+								  		<td>Chine</td>
+								  		<td>96</td>
+								  	</tr>
+								  	<tr>
+								  		<td>Ultrason</td>
+								  		<td>France</td>
+								  		<td>96</td>
+								  	</tr>
+								  	<tr>
+								  		<td>Ultrason</td>
+								  		<td>France</td>
+								  		<td>96</td>
+								  	</tr>
+								  	<tr>
+								  		<td>Ultrason</td>
+								  		<td>USA</td>
+								  		<td>96</td>
+								  	</tr>
+								  	<tr>
+								  		<td>Ultrason</td>
+								  		<td>Chine</td>
+								  		<td>96</td>
+								  	</tr>
+								  </table>
+								</div>
+							</div>
+						</div>
+					
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="data-blocks__card mb">
+								<div class="data-blocks__card__plus">+</div>
+								<div class="p">
+								  <h2 class="h2 white">Publication</h2>
+									<div class="data-blocks__card__toggle">
+										<a href="#" class="js-show-graph"><img src="images/show-graph.png" alt="show graph"></a>
+										<a href="#" class="js-show-columns"><img src="images/show-columns.png" alt="show columns"></a>
+									</div>
+								  	<div class="chart-1">
+								  		<table class="js-graph chart-table" data-graph-container-before="1" 
+								  		data-graph-type="line" data-graph-line-shadow="0" data-graph-legend-disabled="1" data-graph-datalabels-color="#fff"
+								  		data-graph-color-1="#fff"
+								  		data-graph-height="200"
+								  		>
+								  			<thead>
+								  			      <tr>
+								  			          <th>Month</th>
+								  			          <th>Sales</th>
+								  			      </tr>
+								  			   </thead>
+								  			   <tbody>
+								  			      <tr>
+								  			          <td>1990</td>
+								  			          <td>0</td>
+								  			      </tr>
+								  			      <tr>
+								  			          <td>1992</td>
+								  			          <td>100</td>
+								  			      </tr>
+								  			      <tr>
+								  			          <td>1993</td>
+								  			          <td>70</td>
+								  			      </tr>
+								  			      <tr>
+								  			          <td>1995</td>
+								  			          <td>110</td>
+								  			      </tr>
+								  			      <tr>
+								  			          <td>2000</td>
+								  			          <td>200</td>
+								  			      </tr>
+								  			      <tr>
+								  			          <td>2005</td>
+								  			          <td>170</td>
+								  			      </tr>
+								  			      <tr>
+								  			          <td>2010</td>
+								  			          <td>40</td>
+								  			      </tr>
+								  			  </tbody>
+								  		</table>
+								  	</div>
+								  	<div class="chart-2">
+								  		<table class="js-column chart-table" data-graph-container-before="1" 
+								  		data-graph-type="column" data-graph-line-shadow="0" data-graph-legend-disabled="1" data-graph-datalabels-color="#fff"
+								  		data-graph-color-1="#fff"
+								  		data-graph-height="200"
+								  		>
+								  			<thead>
+								  			      <tr>
+								  			          <th>Month</th>
+								  			          <th>Sales</th>
+								  			      </tr>
+								  			   </thead>
+								  			   <tbody>
+								  			      <tr>
+								  			          <td>1990</td>
+								  			          <td>0</td>
+								  			      </tr>
+								  			      <tr>
+								  			          <td>1992</td>
+								  			          <td>100</td>
+								  			      </tr>
+								  			      <tr>
+								  			          <td>1993</td>
+								  			          <td>70</td>
+								  			      </tr>
+								  			      <tr>
+								  			          <td>1995</td>
+								  			          <td>110</td>
+								  			      </tr>
+								  			      <tr>
+								  			          <td>2000</td>
+								  			          <td>200</td>
+								  			      </tr>
+								  			      <tr>
+								  			          <td>2005</td>
+								  			          <td>170</td>
+								  			      </tr>
+								  			      <tr>
+								  			          <td>2010</td>
+								  			          <td>40</td>
+								  			      </tr>
+								  			  </tbody>
+								  		</table>
+								  	</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+			<div id="world-map-gdp" class="data-blocks__map hidden-xs"></div>
+			
+		</div>
+		
+
+		<div class="container-fluid">
+			<div class="results mt mb+">
+				<div class="filter-bar clearfix" role="tabpanel">
+					<div class="results__checkbox checkbox">
+						<input type="checkbox" id="inlineCheckbox1" value="option1">
+						<label for="inlineCheckbox1"></label>
+					</div>
+					
+				    <ul class="nav nav-tabs results__nav df jc-sb at-c clearfix" role="tablist">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle filter-bar__btn" href="#" role="button" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								
+								<li class="dropdown-item" href="#">
+									Add report
+								</li>
+								
+								<li class="dropdown-item" href="#">
+									Share
+								</li>
+
+								<li class="dropdown-item" href="#">
+									Export
+								</li>
+
+								<li class="dropdown-item" href="#">
+									Delete report
+								</li>
+
+								<li class="dropdown-item" href="#">
+									Add tag
+								</li>
+								
+								
+							</ul>
+						</li>
+						<div class="results__tabs">
+							<ul>
+								<li class="nav-item active" role="presentation">
+									<a href="#documents" class="nav-link"  aria-controls="home" role="tab" data-toggle="tab">Documents <span class="green">23</span></a>
+								</li>
+								<li class="nav-item" role="presentation">
+									<a href="#experts" class="nav-link" aria-controls="home" role="tab" data-toggle="tab">Experts <span class="green">23</span></a>
+								</li>
+								<li class="nav-item" role="presentation">
+									<a href="#organizations" class="nav-link" aria-controls="home" role="tab" data-toggle="tab">Organizations <span class="green">23</span></a>
+								</li>
+							</ul>
+						</div>
+						<li class="nav-item">
+							<form>
+								<input class="form-control filter-bar__search" type="text" placeholder="Quick search...">
+							</form>
+						</li>
+						<li class="nav-item dropdown hidden-xs">
+							<a class="nav-link dropdown-toggle filter-bar__btn" href="#" role="button" aria-haspopup="true" aria-expanded="false">Filter <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								
+								<li class="dropdown-item" href="#">
+									<div class="checkbox">
+					    				<input type="checkbox" id="inlineCheckbox" value="option1">
+					    				<label for="inlineCheckbox"></label>
+					    			</div>
+									Articles
+									<span class="badge">23</span>
+								</li>
+								<li class="dropdown-item" href="#">
+									<div class="checkbox">
+					    				<input type="checkbox" id="inlineCheckbox2" value="option2">
+					    				<label for="inlineCheckbox2"></label>
+					    			</div>
+									Patents
+									<span class="badge">123</span>
+								</li>
+								<li class="dropdown-item" href="#">
+									<div class="checkbox">
+					    				<input type="checkbox" id="inlineCheckbox3" value="option3">
+					    				<label for="inlineCheckbox3"></label>
+					    			</div>
+									Thesis
+									<span class="badge">144</span>
+								</li>
+								<li class="dropdown-item" href="#">
+									<div class="checkbox">
+					    				<input type="checkbox" id="inlineCheckbox4" value="option4">
+					    				<label for="inlineCheckbox4"></label>
+					    			</div>
+									Web pages
+									<span class="badge">98</span>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown hidden-xs">
+							<a class="nav-link dropdown-toggle filter-bar__btn" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sortby <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								
+								<li class="dropdown-item" href="#">
+									<div class="checkbox">
+					    				<input type="checkbox" id="inlineCheckbox" value="option1">
+					    				<label for="inlineCheckbox"></label>
+					    			</div>
+									Articles
+									<span class="badge">23</span>
+								</li>
+								<li class="dropdown-item" href="#">
+									<div class="checkbox">
+					    				<input type="checkbox" id="inlineCheckbox2" value="option2">
+					    				<label for="inlineCheckbox2"></label>
+					    			</div>
+									Patents
+									<span class="badge">123</span>
+								</li>
+								<li class="dropdown-item" href="#">
+									<div class="checkbox">
+					    				<input type="checkbox" id="inlineCheckbox3" value="option3">
+					    				<label for="inlineCheckbox3"></label>
+					    			</div>
+									Thesis
+									<span class="badge">144</span>
+								</li>
+								<li class="dropdown-item" href="#">
+									<div class="checkbox">
+					    				<input type="checkbox" id="inlineCheckbox4" value="option4">
+					    				<label for="inlineCheckbox4"></label>
+					    			</div>
+									Web pages
+									<span class="badge">98</span>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link filter-bar__btn filter-bar__btn--presentation filter-bar__btn--list filter-bar__btn--active fl mr0 hidden-xs">
+							</a>
+							<a href="#" class="nav-link filter-bar__btn filter-bar__btn--presentation filter-bar__btn--square fl mr0 hidden-xs">
+							</a>
+						</li>
+					</ul>
+				</div>
+
+							<div class="tab-content results__content">
+									
+				<div role="tabpanel" class="tab-pane active" id="documents">
+				
+				    	<article class="results__row results__row--doc">
+				    		<div class="checkbox">
+				    			<input type="checkbox" id="inlineCheckbox-1" value="option1">
+				    			<label for="inlineCheckbox-1"></label>
+				    		</div>
+				    		<div class="results__row__type">
+				    			<img src="images/doc_icon2.png" alt="document icon">
+				    		</div>
+				    		<div class="results__row__text">
+				    			<h1>Titre du brevet lorem ispum dolore lorem ispum dolore lorem ispum dolore</h1>
+				    			<p>Début de l'article extrait lorem ispum dolore sit amet confucius lorem ispum dolore sit amet confucius dolore sit amet confucius dolore sit amet confucius dolore sit amet confucius …</p>
+				    		</div>
+				    		<div class="results__row__meta">
+				    		<table>
+				    			<tr>
+				    				<td>Year</td>
+				    				<td>1986</td>
+				    			</tr>
+				    			<tr>
+				    				<td>Experts</td>
+				    				<td>Jean-Jacques Blanc <br>
+				    				Pierre Yves</td>
+				    			</tr>
+				    			<tr>
+				    				<td>Organizations</td>
+				    				<td>Areva</td>
+				    			</tr>
+				    		</table>
+				    		</div>
+				    		<div class="results__row__actions">
+				    			<a href="" class=""><img src="images/comment_icon2.png" alt="comment" width="15"></a>
+				    			<a href="" class=""><img src="images/star_icon2.png" alt="star" width="15"></a>
+				    			<a href="" class=""><img src="images/share_icon2.png" alt="share" width="15"></a>
+				    		</div>
+				    	</article>
+				    	<article class="results__row results__row--doc">
+				    		<div class="checkbox">
+				    			<input type="checkbox" id="inlineCheckbox-2" value="option1">
+				    			<label for="inlineCheckbox-2"></label>
+				    		</div>
+				    		<div class="results__row__type">
+				    			<img src="images/doc_icon2.png" alt="document icon">
+				    		</div>
+				    		<div class="results__row__text">
+				    			<h1>Titre du brevet lorem ispum dolore lorem ispum dolore lorem ispum dolore</h1>
+				    			<p>Début de l'article extrait lorem ispum dolore sit amet confucius lorem ispum dolore sit amet confucius dolore sit amet confucius dolore sit amet confucius dolore sit amet confucius …</p>
+				    		</div>
+				    		<div class="results__row__meta">
+				    		<table>
+				    			<tr>
+				    				<td>Year</td>
+				    				<td>1986</td>
+				    			</tr>
+				    			<tr>
+				    				<td>Experts</td>
+				    				<td>Jean-Jacques Blanc <br>
+				    				Pierre Yves</td>
+				    			</tr>
+				    			<tr>
+				    				<td>Organizations</td>
+				    				<td>Areva</td>
+				    			</tr>
+				    		</table>
+				    		</div>
+				    		<div class="results__row__actions">
+				    			<a href="" class=""><img src="images/comment_icon2.png" alt="comment" width="15"></a>
+				    			<a href="" class=""><img src="images/star_icon2.png" alt="star" width="15"></a>
+				    			<a href="" class=""><img src="images/share_icon2.png" alt="share" width="15"></a>
+				    		</div>
+				    	</article>
+				    	<article class="results__row results__row--doc">
+				    		<div class="checkbox">
+				    			<input type="checkbox" id="inlineCheckbox-3" value="option1">
+				    			<label for="inlineCheckbox-3"></label>
+				    		</div>
+				    		<div class="results__row__type">
+				    			<img src="images/doc_icon2.png" alt="document icon">
+				    		</div>
+				    		<div class="results__row__text">
+				    			<h1>Titre du brevet lorem ispum dolore lorem ispum dolore lorem ispum dolore</h1>
+				    			<p>Début de l'article extrait lorem ispum dolore sit amet confucius lorem ispum dolore sit amet confucius dolore sit amet confucius dolore sit amet confucius dolore sit amet confucius …</p>
+				    		</div>
+				    		<div class="results__row__meta">
+				    		<table>
+				    			<tr>
+				    				<td>Year</td>
+				    				<td>1986</td>
+				    			</tr>
+				    			<tr>
+				    				<td>Experts</td>
+				    				<td>Jean-Jacques Blanc <br>
+				    				Pierre Yves</td>
+				    			</tr>
+				    			<tr>
+				    				<td>Organizations</td>
+				    				<td>Areva</td>
+				    			</tr>
+				    		</table>
+				    		</div>
+				    		<div class="results__row__actions">
+				    			<a href="" class=""><img src="images/comment_icon2.png" alt="comment" width="15"></a>
+				    			<a href="" class=""><img src="images/star_icon2.png" alt="star" width="15"></a>
+				    			<a href="" class=""><img src="images/share_icon2.png" alt="share" width="15"></a>
+				    		</div>
+				    	</article>
+				    	<article class="results__row results__row--doc">
+				    		<div class="checkbox">
+				    			<input type="checkbox" id="inlineCheckbox-4" value="option1">
+				    			<label for="inlineCheckbox-4"></label>
+				    		</div>
+				    		<div class="results__row__type">
+				    			<img src="images/doc_icon2.png" alt="document icon">
+				    		</div>
+				    		<div class="results__row__text">
+				    			<h1>Titre du brevet lorem ispum dolore lorem ispum dolore lorem ispum dolore</h1>
+				    			<p>Début de l'article extrait lorem ispum dolore sit amet confucius lorem ispum dolore sit amet confucius dolore sit amet confucius dolore sit amet confucius dolore sit amet confucius …</p>
+				    		</div>
+				    		<div class="results__row__meta">
+				    		<table>
+				    			<tr>
+				    				<td>Year</td>
+				    				<td>1986</td>
+				    			</tr>
+				    			<tr>
+				    				<td>Experts</td>
+				    				<td>Jean-Jacques Blanc <br>
+				    				Pierre Yves</td>
+				    			</tr>
+				    			<tr>
+				    				<td>Organizations</td>
+				    				<td>Areva</td>
+				    			</tr>
+				    		</table>
+				    		</div>
+				    		<div class="results__row__actions">
+				    			<a href="" class=""><img src="images/comment_icon2.png" alt="comment" width="15"></a>
+				    			<a href="" class=""><img src="images/star_icon2.png" alt="star" width="15"></a>
+				    			<a href="" class=""><img src="images/share_icon2.png" alt="share" width="15"></a>
+				    		</div>
+				    	</article>
+				
+				</div>
+
+				<div role="tabpanel" class="tab-pane" id="experts">
+				   <p class="white">#experts</p>
+				</div>
+
+				<div role="tabpanel" class="tab-pane" id="organizations">
+				   <p class="white">#organizations</p>
+				</div>
+
+			</div>
+
+			</div>
+
+		</div>
+
+      </div>
+
+<!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/plugins.js -->
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+    <!-- endbuild -->
+
+
+     <script src="scripts/highcharts.js"></script>
+     <script src="scripts/jquery.highchartTable-min.js"></script>
+     <script src="scripts/jquery-jvectormap-2.0.3.min.js"></script>
+     <script src="scripts/jquery-jvectormap-world-mill.js"></script>
+     <script src="scripts/gdp-data.js"></script>
+     <script src="scripts/jquery.FloatLabel.js"></script>
+     <script src="scripts/bootstrap-slider.min.js"></script>
+     <script src="scripts/main.js"></script>
+     
+     <script>
+     	// the map that shows up in the search results
+     	// the values come from a different file gdp-data.js
+     	$('#world-map-gdp').vectorMap({
+     	map: 'world_mill',
+     	series: {
+     	 regions: [{
+     	   values: gdpData,
+     	   backgroundColor: '#2B3036',
+     	   scale: ['#C8EEFF', '#0071A4'],
+     	   normalizeFunction: 'polynomial'
+     	 }]
+     	},
+     	onRegionTipShow: function(e, el, code){
+     	 el.html(el.html()+' (GDP - '+gdpData[code]+')');
+     	}
+     	});
+      
+     </script>
+  </body>
+</html>
+    

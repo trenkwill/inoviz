@@ -1,0 +1,102 @@
+.advanced-search {
+	$col-size: 250px;
+	@media screen and (min-width: $screen-sm-min) {
+		height: 100vh;
+		margin-right: $col-size;
+		position: relative;
+		z-index: 0;
+	}
+	
+	&__tabs {
+		@media screen and (min-width: $screen-sm-min) {
+			float: left;
+		}
+		background: $white;
+		width: 100%;
+		border-top: solid 1px $grey;
+		border-bottom: solid 1px $grey;
+		text-align: center;
+		// bootstrap overides
+		li {
+			float: none !important;
+			display: inline-block;
+		}
+		a {
+			color: #333;
+			&:hover {
+				background: none !important;
+				border: none !important;
+			}
+		}
+		.badge {
+			background: $green;
+			padding: 4px !important;
+			margin-left: 10px;
+		}
+		.active a{
+			color: #333;h4display: block;
+			background: none !important;
+			border: none !important;
+			border-bottom: solid 5px $grey !important;
+		}
+	}
+	&__map {
+		height: 300px;
+		svg {
+			width: 100%;
+		}
+		@media screen and (min-width: $screen-sm-min) {
+		margin-left: 100px;
+		}
+		.jvectormap-container {
+			background:$bg-card !important;
+		}
+	}
+	&__map-results{
+		position: absolute;
+		left: 10px;
+		top: 10px;
+	}
+	&__map-search{
+			border: solid 2px $bg-card !important;
+			border-radius: 5px;
+			height: 33px;
+			margin-top: -7px;
+			margin-right: -7px;
+			width: 50%;
+			@media screen and (min-width: $screen-sm-min) {
+				width: 30%;
+			}
+	} 
+	&__col {
+		background: $bg-card;
+		@media screen and (max-width: $screen-sm-min) {
+			margin: 15px;
+		}
+		@media screen and (min-width: $screen-sm-min) {
+		position: absolute;
+		top: 10px;
+		bottom: 0;
+		right: -$col-size;
+		width: $col-size;
+		}
+		&__title {
+			background: $bg-title;
+			padding: 10px;
+		}
+	}
+	
+	.slider-track {
+		background: $bg;
+		height: 5px !important;
+	}
+	.slider-handle {
+		background: $orange;
+		height: 15px !important;
+		width: 15px !important;
+	}
+
+	.slider-selection {
+		background: $orange;
+	}
+}

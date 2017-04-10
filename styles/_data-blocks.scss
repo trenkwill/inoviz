@@ -1,0 +1,153 @@
+.data-blocks {
+	padding: 10px 20px;
+	position: relative;
+	background: #546078;
+	@media screen and (min-width: $screen-sm-min) {
+		height: 400px;
+	}
+	&__content {
+		padding: 0 20px;
+		background: linear-gradient(rgba(43, 48, 54, .6), rgba(43, 48, 54, 0));
+		overflow: hidden;
+		@media screen and (min-width: $screen-sm-min) {
+			z-index: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+	
+	&__title {
+		font-size: 25px;
+		color: $white;
+		font-weight: 100;
+	}
+	&__subtitle {
+		font-size: 16px;
+		text-align: center;
+		color: $white;
+		font-weight: 100;
+		position: absolute;
+		bottom: 30px;
+		width: 100%;
+	}
+	&__map {
+		width: 600px;
+		height: 400px;
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+	}
+	&__legend {
+		position: absolute;
+		bottom: 20px;
+		left: 40px;
+		right: 40px;
+		span {
+			display: inline-block;
+			float: left;
+			width: 20%;
+			height: 4px;
+			position: relative;
+			span {
+				position: absolute;
+				color: $white;
+				top: 10px;
+				left: -10px;
+			}
+		}
+		.legend-0 {
+			background-color: #0c293d;
+		}
+		.legend-1 {
+			background-color: #1c4b73;
+		}
+		.legend-2 {
+			background-color: #3f9acf;
+		}
+		.legend-3 {
+			background-color: #9ddbfc;
+		}
+		.legend-4 {
+			background-color: #fff;
+			.last {right: 0px;left:inherit;}
+		}
+	}
+	&__card {
+		background: $bg-card;
+		position: relative;
+		&__free {
+			text-align: center;
+			padding: 80px 0;
+			font-weight: bold;
+		}
+		&__plus {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 20px;
+			height: 20px;
+			color: $white;
+			background: rgba(43, 48, 54, 1.0);
+			text-align: center;
+		}
+		&__toggle {
+			position: absolute;
+			right: 20px;
+			top: 16px;
+		}
+		&__switch {
+			display: block;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			float: left;
+			margin-left: 5px;
+			border: solid 2px #AEB9CF;
+			&--bar{
+				background: url("../images/graph-icon.png") no-repeat center;
+				&.active {
+					background: #AEB9CF url("../images/graph-icon-white.png") no-repeat center;
+				}
+			}
+			&--column{
+				background: url("../images/graph-icon-2.png") no-repeat center;
+				&.active {
+					background: #AEB9CF url("../images/graph-icon-2-white.png") no-repeat center;
+				}
+			}
+		}
+		.h2 {
+			margin-top: 0;
+		}
+		table {
+			color: $white;
+			td {
+				border-top: none !important;
+				border-bottom: solid 1px $white;
+			}
+			tr:last-child td {
+				border-bottom: none !important;
+			}
+		}
+	}
+
+	// chart overides
+	.chart-table{
+		display: none;
+	}
+	.chart-2 {
+		opacity:0;
+		height: 0;
+	}
+	
+	text {
+		fill: #fff !important;
+	}
+	.highcharts-tracker {
+		// stroke: $white;	
+	}
+}

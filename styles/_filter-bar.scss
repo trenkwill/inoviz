@@ -1,0 +1,91 @@
+// bootstrap overides
+
+.filter-bar {
+	&__btn {
+		border: solid 2px $bg-card !important;
+		border-radius: 20px;
+		color: $bg-card !important;
+		padding: 5px 15px !important;
+		border-radius: 5px !important;
+		min-height: 33px;
+		background-repeat: no-repeat;
+
+		&[role="drop-button"]{
+			position: relative;
+			&:before {
+				content:"";
+				position: absolute;
+				right: 5px;
+				top: 13px;
+				border-top: 4px dashed;
+				border-top: 4px solid \9;
+				border-right: 4px solid transparent;
+				border-left: 4px solid transparent;
+			}
+		}
+		&--list {
+			background-image: url("../images/list-icon.png");
+			background-position: center -18px;
+			border-radius: 5px 0px 0px 5px !important;
+		}
+		&--square {
+			background-image: url("../images/square-icon.png");
+			background-position: center -20px;
+			border-radius: 0px 5px 5px 0px !important;
+			border-left: none;
+		}
+		&--active, &.active{
+			border: solid 2px $white !important;
+			background-position: center 8px;
+		}
+	}
+
+	&__search {
+		border: solid 2px $bg-card !important;
+		border-radius: 5px;
+		height: 33px;
+	}
+
+	&__nav, .nav-tabs {
+		border-bottom: solid 1px $bg-card;
+		padding-bottom: 12px;
+		li {
+			margin-bottom: 0px;
+			@media screen and (max-width: $screen-sm-min) {
+				margin-bottom: 20px;
+			}
+			&.active {
+				a[role="tab"] {
+					border-top: none !important;
+					border-right: none !important;
+					border-left: none !important;
+					border-bottom: 3px $white solid !important;
+					color: $white !important;
+					text-decoration: none;
+				}
+			}
+			a {
+				padding-bottom: 15px;
+			}
+		}
+		&:after, &:before {
+			display: none;
+		}
+	}
+	.nav-link[role="tab"] {
+		color: $white;
+		border-bottom: solid 4px $bg;
+		padding-left: 0;
+		padding-right: 0;
+		&.active, &:focus, &:active {
+			border-top: none !important;
+			border-right: none !important;
+			border-left: none !important;
+			border-bottom: 3px $white solid !important;
+			color: $white !important;
+		}
+	}
+	.badge {
+		background-color: $green;
+	}
+}

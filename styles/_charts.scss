@@ -1,0 +1,103 @@
+// CSS charts overides
+
+
+.highcharts-background {
+	fill: $bg-card;
+	background: $bg-card;
+}
+
+.highcharts-bar {
+
+	&__switcher {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+	&__switch {
+		display: block;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		float: left;
+		margin-left: 5px;
+		border: solid 2px #AEB9CF;
+		&#show-bar{
+			background: url("../images/graph-icon.png") no-repeat center;
+			&.active {
+				background: #AEB9CF url("../images/graph-icon-white.png") no-repeat center;
+			}
+		}
+		&#show-column{
+			background: url("../images/graph-icon-2.png") no-repeat center;
+			&.active {
+				background: #AEB9CF url("../images/graph-icon-2-white.png") no-repeat center;
+			}
+		}
+	}
+	.highchart {
+		margin: 20px auto 0;
+	@media screen and (min-width: $screen-sm-min) {
+		min-width: 310px; 
+		max-width: 800px; 
+	}
+	}
+	.highcharts-title, .highcharts-legend, .highcharts-yaxis-title {
+		display: none;
+	}
+	.highcharts-series {
+		rect {
+			fill: #fff;
+			stroke: none;
+		}
+	}
+	.highcharts-series-0 {
+		rect {
+			fill: #C0CEE8;
+			stroke: none;
+		}
+	}
+	.highcharts-data-labels {
+		text {
+			display: none;
+		}
+	}
+	.highcharts-grid {
+		display: none;
+	}
+	.highcharts-axis-labels {
+		text {
+			color: #fff !important;
+			fill: #fff !important;
+		}
+	}
+	.highcharts-yaxis-labels {
+		border-top: solid 1px #fff !important;
+	}
+
+	// bootstrap overide tabs style to make them look like btn-group
+	.nav-tabs {
+		border: none !important;
+		li {
+			box-shadow: none !important;
+			padding: 0 !important;
+			&.active {
+				a {
+					color: #fff !important;
+				}
+			}
+			a {
+				border: none !important;
+				color: $bg;
+				padding: 7px 10px;
+			}
+		}
+	}
+	.tab-content > .tab-pane:not(.active),
+	.pill-content > .pill-pane:not(.active) {
+	    display: block !important;
+	    height: 0  !important;
+	    overflow-y: hidden  !important;
+	} 
+
+}
+

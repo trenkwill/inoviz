@@ -1,0 +1,105 @@
+.settings {
+	margin: 0 auto;
+	max-width: 640px;
+	padding:0 20px;
+	
+	&__title {
+		color: $bg-card;
+		position: relative;
+		padding-bottom: 20px;
+		span {
+			padding: 0 20px;
+			background: $bg;
+			position: relative;
+			z-index: 1;
+		}
+		&:after {
+			position: relative;
+			z-index: 0;
+			content:"";
+			width: 100%;
+			height: 1px;
+			background: $bg-card;
+			display: block;
+			margin-top: -10px;
+		}
+		&--sub {
+			span {
+				color: $bg;
+				background: $bg-title;
+				padding: 0;
+			}
+			&:after {
+				background: $bg;
+				margin-top: -20px;
+			}
+		}
+	}
+	&__text {
+		@media screen and (max-width: $screen-sm-min) {
+			margin-right: 60px;
+		}
+	}
+	&__block {
+		background: $bg-title;
+		padding: 20px;
+		position: relative;
+		h2 {
+			margin-right: 80px;
+		}
+		&--white {
+			background: $white;
+		}
+		&__in {
+			background: $bg-card;
+			position: relative;
+			padding: 10px 20px 10px 20px;
+			margin-bottom: 10px;
+			
+			.radio {
+				position: absolute;
+				right: 30px;
+				top: 50%;
+				margin-top: -10px;
+			}
+		}
+		&__delete {
+			position: absolute;
+			right: 20px;
+			top: 50%;
+			margin-top: -4px;
+		}
+		.tag {
+			margin-right: 10px;
+			margin-bottom: 20px;
+			padding-left:55px;
+			padding-right:55px;
+		}
+	}
+
+	&__moretags {
+		background: $bg-card;
+		color: $bg;
+		padding: 10px 20px;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+
+	&__addtag {
+		display: block;
+		padding: 30px;
+		text-align: center;
+		border: solid 2px $bg;
+		color: $bg;
+		&:hover {
+			color: $bg;
+		}
+	}
+
+	&__level {
+		// padding-top: 40px;
+		// padding-bottom: 40px;
+		border-bottom: solid 1px $bg;
+	}
+}
